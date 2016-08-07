@@ -178,7 +178,8 @@ html, body {
 							font-size: 1.2rem;
 							background: white;
 							color: initial;
-							display: block;
+							display: table-cell;
+							vertical-align: middle;
 							text-indent: 0;
 							white-space: nowrap;
 							border-radius: 3px;

@@ -213,7 +213,8 @@ html, body {
   font-size: 1.2rem;
   background: white;
   color: initial;
-  display: block;
+  display: table-cell;
+  vertical-align: middle;
   text-indent: 0;
   white-space: nowrap;
   border-radius: 3px;
@@ -224,7 +225,7 @@ html, body {
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 187, ../sass/style.scss */
+/* line 188, ../sass/style.scss */
 .bachelours-degree.masters-degree .bachelours-degree-wrapper .degree-list-item.active i .popup-info:before {
   height: 0;
   width: 0;
@@ -243,13 +244,13 @@ html, body {
 }
 
 @media (min-width: 992px) {
-  /* line 209, ../sass/style.scss */
+  /* line 210, ../sass/style.scss */
   html, body {
     font-size: 8px;
   }
 }
 @media (min-width: 1200px) {
-  /* line 217, ../sass/style.scss */
+  /* line 218, ../sass/style.scss */
   html, body {
     font-size: 10px;
   }
