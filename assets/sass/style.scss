@@ -69,7 +69,7 @@ html, body {
 			padding: 1.1rem 3.1rem; 
 		}
 		.banner-desc {
-				margin: 1px 0 0;
+			margin: 1px 0 0;
 			P {
 				font-size: 2.2rem;
 				background-image: map-get($images, black_background_transparent);
@@ -120,6 +120,7 @@ html, body {
 				width: 100%;
 				position: relative;
 				text-align: left;
+				color: map-get($colors, darkgray);
 				i {
 					display: table-cell;
 					font-style: normal;
@@ -143,6 +144,60 @@ html, body {
 					font-size: 1.4rem;
 					padding: 1rem 2rem;
 					border-radius: 2rem;
+					&:focus, &:active {
+						outline: none;
+					}
+				}
+				&.active {
+					i {
+						text-indent: -99999999px;
+						background: transparent url("../images/green-check.png") no-repeat center left;
+					}
+				}
+			}
+		}
+	}
+	&.masters-degree {
+		.bachelours-degree-wrapper {
+			.degree-list-item {
+				&.active {
+					border-bottom: 0;
+					background: map-get($colors, buttonRed);
+					button {
+						color: map-get($colors, white);
+					}
+					i {
+						position: relative;
+						background: transparent url("../images/white-check.png") no-repeat center left;
+						.popup-info {
+							position: absolute;
+							padding: 1rem;
+							left: calc(100% + 1rem);
+							top: 0;
+							font-family: "Lato Bold";
+							font-size: 1.2rem;
+							background: white;
+							color: initial;
+							display: block;
+							text-indent: 0;
+							white-space: nowrap;
+							border-radius: 3px;
+							top: 50%;
+							@include _transform(translateY(-50%));
+							&:before {
+								height: 0;
+								width: 0;
+								content: "";
+								border-width: .9rem;
+								border-style: solid;
+								border-color: transparent map-get($colors, white) transparent transparent;
+								position: absolute;
+								left: -1.8rem;
+								top: 50%;
+								@include _transform(translateY(-50%));
+							}
+						}
+					}
 				}
 			}
 		}
