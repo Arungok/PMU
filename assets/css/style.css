@@ -64,7 +64,7 @@ html, body {
 }
 /* line 49, ../sass/style.scss */
 .banner-wrapper {
-  height: 70rem;
+  min-height: 70rem;
   background: transparent url("../images/banner-background.png") no-repeat center;
   background-size: cover;
   margin-bottom: 15rem;

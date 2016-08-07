@@ -47,7 +47,7 @@ html, body {
 }
 
 .banner-wrapper {
-	height: 70rem;
+	min-height: 70rem;
 	background: transparent map-get($images, banner_background) no-repeat center;
 	background-size: cover;
 	.banner-container {
