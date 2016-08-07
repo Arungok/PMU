@@ -188,22 +188,23 @@ html, body {
 .bachelours-degree .bachelours-degree-wrapper .degree-list .degree-list-item.active i {
   text-indent: -99999999px;
   background: transparent url("../images/green-check.png") no-repeat center left;
+  background-size: contain;
 }
-/* line 163, ../sass/style.scss */
+/* line 164, ../sass/style.scss */
 .bachelours-degree.masters-degree .bachelours-degree-wrapper .degree-list-item.active {
   border-bottom: 0;
   background: #FF3366;
 }
-/* line 166, ../sass/style.scss */
+/* line 167, ../sass/style.scss */
 .bachelours-degree.masters-degree .bachelours-degree-wrapper .degree-list-item.active button {
   color: #FFFFFF;
 }
-/* line 169, ../sass/style.scss */
+/* line 170, ../sass/style.scss */
 .bachelours-degree.masters-degree .bachelours-degree-wrapper .degree-list-item.active i {
   position: relative;
-  background: transparent url("../images/white-check.png") no-repeat center left;
+  background-image: url("../images/white-check.png");
 }
-/* line 172, ../sass/style.scss */
+/* line 173, ../sass/style.scss */
 .bachelours-degree.masters-degree .bachelours-degree-wrapper .degree-list-item.active i .popup-info {
   position: absolute;
   padding: 1rem;
@@ -225,7 +226,7 @@ html, body {
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-/* line 188, ../sass/style.scss */
+/* line 189, ../sass/style.scss */
 .bachelours-degree.masters-degree .bachelours-degree-wrapper .degree-list-item.active i .popup-info:before {
   height: 0;
   width: 0;
@@ -244,13 +245,13 @@ html, body {
 }
 
 @media (min-width: 992px) {
-  /* line 210, ../sass/style.scss */
+  /* line 211, ../sass/style.scss */
   html, body {
     font-size: 8px;
   }
 }
 @media (min-width: 1200px) {
-  /* line 218, ../sass/style.scss */
+  /* line 219, ../sass/style.scss */
   html, body {
     font-size: 10px;
   }

@@ -152,6 +152,7 @@ html, body {
 					i {
 						text-indent: -99999999px;
 						background: transparent url("../images/green-check.png") no-repeat center left;
+						background-size: contain;
 					}
 				}
 			}
@@ -168,7 +169,7 @@ html, body {
 					}
 					i {
 						position: relative;
-						background: transparent url("../images/white-check.png") no-repeat center left;
+						background-image: url("../images/white-check.png");
 						.popup-info {
 							position: absolute;
 							padding: 1rem;
