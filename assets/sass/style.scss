@@ -192,7 +192,7 @@ html, body {
 								border-style: solid;
 								border-color: transparent map-get($colors, white) transparent transparent;
 								position: absolute;
-								left: -1.8rem;
+								left: -1.6rem;
 								top: 50%;
 								@include _transform(translateY(-50%));
 							}
