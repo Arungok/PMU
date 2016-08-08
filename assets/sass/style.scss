@@ -9,8 +9,13 @@ html, body {
 	font-family: "Lato Light";
 }
 
-.pmu-title {
-	font-family: "Lato Black";
+ul, li {
+	list-style: none;
+	padding: 0;
+}
+
+img {
+	max-width: 100%;
 }
 
 .pmu-wrapper {
@@ -23,16 +28,7 @@ html, body {
 	}
 }
 
-.container-full {
-	margin: 0 auto;
-	width: 100%;
-}
-
 @media (min-width:768px) {
-
-	html, body {
-		font-size: 6px;
-	}
 
 	.pmu-wrapper {
 		& > * {
@@ -45,6 +41,26 @@ html, body {
 	}
 
 }
+
+.title {
+	font-size: 4rem;
+	line-height: 1;
+	font-family: "Lato Black";
+	color: map-get($colors, darkgray);
+	text-transform: uppercase;
+	margin-bottom: 2rem;
+}
+.desc {
+	font-size: 2.2rem;
+	color: map-get($colors, mediumgray);
+	padding: 0 5rem;
+}
+
+.container-full {
+	margin: 0 auto;
+	width: 100%;
+}
+
 
 .banner-wrapper {
 	min-height: 70rem;
@@ -63,10 +79,12 @@ html, body {
 			}
 		}
 		.banner-title {
+			font-family: "Lato Black";
 			font-size: 5.8rem;
 			background-image: map-get($images, black_background_transparent);
 			display: inline-block;
-			padding: 1.1rem 3.1rem; 
+			padding: 1.1rem 3.1rem;
+			color: inherit;
 		}
 		.banner-desc {
 			margin: 1px 0 0;
@@ -97,20 +115,12 @@ html, body {
 	text-align: center;
 	.bachelours-degree-wrapper {
 		.title {
-			color: map-get($colors, gray);
-			font-size: 4rem;
-			line-height: 1;
-			margin-bottom: 2rem;
 		}
 		.desc {
-			font-size: 2.2rem;
-			padding: 0 5rem;
 			margin-bottom: 7rem;
 		}
 		.degree-list {
-			list-style: none;
 			border-top: 1px solid map-get($colors, borderGray);
-			padding: 0;
 			.degree-list-item {
 				border-bottom: 1px solid map-get($colors, borderGray);
 				padding: 1.8rem 2rem;
@@ -164,6 +174,7 @@ html, body {
 				&.active {
 					border-bottom: 0;
 					background: map-get($colors, buttonRed);
+					color: map-get($colors, white);
 					button {
 						color: map-get($colors, white);
 					}
@@ -185,6 +196,7 @@ html, body {
 							white-space: nowrap;
 							border-radius: 3px;
 							top: 50%;
+							@include _boxshadow(2px, 2px, 15px, -6px, map-get($colors, black));
 							@include _transform(translateY(-50%));
 							&:before {
 								height: 0;
@@ -204,6 +216,135 @@ html, body {
 			}
 		}
 	}
+}
+
+.specialization {
+	margin-bottom: 15rem;
+	text-align: center;
+	color: map-get($colors, darkgray);
+	.title {
+		margin-bottom: 2rem;
+	}
+	.desc {
+		padding: 0 5rem;
+	}
+	.specialization-list {
+		display: inline-block;
+		width: 100%;
+		.specialization-list-item {
+			width: 50%;
+			float: left;
+			font-family: "Lato Black";
+			font-size: 2.2rem;
+			margin-top: 6rem;
+			&:nth-child(4n+1) {
+				clear: left;
+			}
+			i {
+				border-radius: 50%;
+				background-color: map-get($colors, darkgray);
+				display: block;
+				width: 7rem;
+				height: 7rem;
+				margin: 0 auto 2rem;
+			}
+			span {
+				display: block;
+				text-transform: uppercase;
+			}
+			&.active {
+				color: map-get($colors, buttonRed);
+				i {
+					background-color: map-get($colors, buttonRed);
+				}
+			}
+		}
+	}
+}
+
+.knowledge {
+	background: map-get($colors, lightgray);
+	padding: 15rem 0;
+	text-align: center;
+	& > * {
+		max-width: 94.4rem;
+	}
+	.knowledge-list {
+		.knowledge-list-item {
+			margin-top: 6rem;
+			width: 100%;
+		}
+	}
+}
+
+@media (min-width:768px) {
+
+	html, body {
+		font-size: 6px;
+	}
+
+	.specialization {
+		.specialization-list {
+			.specialization-list-item {
+				width: 25%;
+			}
+		}
+	}
+
+	.knowledge {
+		.knowledge-list {
+			display: inline-block;
+			margin-left: -2.1rem;
+			.knowledge-list-item {
+				padding-left: 2.1rem;
+				width: 33.33%;
+				float: left;
+				position: relative;
+				.list-image {
+					position: relative;
+					&:before {
+						content: "";
+						background: transparent map-get($images, black_background_transparent);
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+					}
+				}
+				.list-desc {
+					position: absolute;
+					bottom: 0;
+					background-color: map-get($colors, white);
+					line-height: 1;
+					padding: 4rem;
+					P {
+						text-align: left;
+						font-size: 3rem;
+						font-family: "Lato Black";
+						text-transform: uppercase;
+						margin: 0;
+					}
+				}
+				&.active {
+					.list-image {
+						&:before {
+							background: transparent map-get($images, red_background);
+						}
+					}
+					.list-desc {
+						background: transparent;
+						border: 1px solid map-get($colors, white);
+						padding: 2rem;
+						top: 0;
+						margin: 2rem;
+						color: map-get($colors, white);
+					}
+				}
+			}
+		}
+	}
+
 }
 
 @media (min-width:992px) {
