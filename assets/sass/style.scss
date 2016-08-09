@@ -18,6 +18,14 @@ img {
 	max-width: 100%;
 }
 
+a {
+	text-decoration: none;
+	&:hover, &:focus, &:active {
+		text-decoration: none;
+		outline: none;
+	}
+}
+
 .pmu-wrapper {
 	& > * {
 		width: auto;
@@ -54,13 +62,14 @@ img {
 	font-size: 2.2rem;
 	color: map-get($colors, mediumgray);
 	padding: 0 5rem;
+	max-width: 80rem;
+	margin: 0 auto;
 }
 
 .container-full {
 	margin: 0 auto;
 	width: 100%;
 }
-
 
 .banner-wrapper {
 	min-height: 70rem;
@@ -131,7 +140,9 @@ img {
 				position: relative;
 				text-align: left;
 				color: map-get($colors, darkgray);
+				cursor: pointer;
 				i {
+					position: relative;
 					display: table-cell;
 					font-style: normal;
 					width: 2.1rem;
@@ -158,7 +169,14 @@ img {
 						outline: none;
 					}
 				}
-				&.active {
+				&.active, &:hover {
+					background: map-get($colors, buttonRed);
+					color: map-get($colors, white);
+					button {
+						color: map-get($colors, white);
+					}
+				}
+				&.checked {
 					i {
 						text-indent: -99999999px;
 						background: transparent url("../images/green-check.png") no-repeat center left;
@@ -171,21 +189,27 @@ img {
 	&.masters-degree {
 		.bachelours-degree-wrapper {
 			.degree-list-item {
-				&.active {
-					border-bottom: 0;
-					background: map-get($colors, buttonRed);
-					color: map-get($colors, white);
-					button {
-						color: map-get($colors, white);
-					}
+				&.checked {
 					i {
-						position: relative;
 						background-image: url("../images/white-check.png");
-						.popup-info {
+						&:before {
+							height: 0;
+							width: 0;
+							content: "";
+							border-width: .9rem;
+							border-style: solid;
+							border-color: transparent map-get($colors, white) transparent transparent;
+							position: absolute;
+							right: -2rem;
+							top: 50%;
+							z-index: 2;
+							@include _transform(translateY(-50%));
+						}
+						&:after {
+							content: "Mark as Read";
 							position: absolute;
 							padding: 1rem;
-							left: calc(100% + 1rem);
-							top: 0;
+							left: 3.8rem;
 							font-family: "Lato Bold";
 							font-size: 1.2rem;
 							background: white;
@@ -195,21 +219,10 @@ img {
 							text-indent: 0;
 							white-space: nowrap;
 							border-radius: 3px;
-							top: 50%;
 							@include _boxshadow(2px, 2px, 15px, -6px, map-get($colors, black));
+							top: 50%;
 							@include _transform(translateY(-50%));
-							&:before {
-								height: 0;
-								width: 0;
-								content: "";
-								border-width: .9rem;
-								border-style: solid;
-								border-color: transparent map-get($colors, white) transparent transparent;
-								position: absolute;
-								left: -1.6rem;
-								top: 50%;
-								@include _transform(translateY(-50%));
-							}
+							z-index: 1;
 						}
 					}
 				}
@@ -237,6 +250,7 @@ img {
 			font-family: "Lato Black";
 			font-size: 2.2rem;
 			margin-top: 6rem;
+			cursor: pointer;
 			&:nth-child(4n+1) {
 				clear: left;
 			}
@@ -252,7 +266,7 @@ img {
 				display: block;
 				text-transform: uppercase;
 			}
-			&.active {
+			&.active, &:hover {
 				color: map-get($colors, buttonRed);
 				i {
 					background-color: map-get($colors, buttonRed);
@@ -270,9 +284,109 @@ img {
 		max-width: 94.4rem;
 	}
 	.knowledge-list {
+		display: inline-block;
+		margin-left: -2.1rem;
 		.knowledge-list-item {
 			margin-top: 6rem;
+			padding-left: 2.1rem;
 			width: 100%;
+			float: left;
+			position: relative;
+			cursor: pointer;
+			.list-image {
+				position: relative;
+				&:before {
+					content: "";
+					background: transparent map-get($images, black_background_transparent);
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+				}
+			}
+			.list-desc {
+				position: absolute;
+				bottom: 0;
+				background-color: map-get($colors, white);
+				line-height: 1;
+				padding: 4rem;
+				width: calc(100% - 2.1rem);
+				P {
+					text-align: left;
+					font-size: 3rem;
+					font-family: "Lato Black";
+					text-transform: uppercase;
+					margin: 0;
+				}
+			}
+			&.active, &:hover {
+				.list-image {
+					&:before {
+						background: transparent map-get($images, red_background);
+					}
+				}
+				.list-desc {
+					background: transparent;
+					border: 1px solid map-get($colors, white);
+					padding: 0;
+					top: 0;
+					margin: 2rem;
+					color: map-get($colors, white);
+					width: calc(100% - 6.1rem);
+					p {
+						position: absolute;
+						bottom: 0;
+						padding: 2rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+.placements {
+	padding: 15rem 0;
+	.placements-wrapper {
+		text-align: center;
+		.placements-list {
+			.placements-list-item {
+				display: table;
+				text-align: left;
+				margin-top: 6rem;
+				& > * {
+					display: table-cell;
+					vertical-align: middle;
+				}
+				.list-image {
+					width: 15.1rem;
+				}
+				.list-content {
+					padding-left: 4rem;
+					.list-header {
+						font-size: 2.2rem;
+					}
+					.list-desc {
+						font-size: 1.6rem;
+						padding: 0;
+						font-family: "Lato Regular";
+					}
+					.list-link {
+						color: map-get($colors, buttonRed);
+						a {
+							font-family: "Lato Black";
+							font-size: 1.4rem;
+							color: inherit;
+							text-transform: uppercase;
+							&:after {
+								font-size: 2rem;
+								color: inherit;
+								content: "\00bb";
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }
@@ -294,53 +408,8 @@ img {
 	.knowledge {
 		.knowledge-list {
 			display: inline-block;
-			margin-left: -2.1rem;
 			.knowledge-list-item {
-				padding-left: 2.1rem;
 				width: 33.33%;
-				float: left;
-				position: relative;
-				.list-image {
-					position: relative;
-					&:before {
-						content: "";
-						background: transparent map-get($images, black_background_transparent);
-						position: absolute;
-						top: 0;
-						left: 0;
-						right: 0;
-						bottom: 0;
-					}
-				}
-				.list-desc {
-					position: absolute;
-					bottom: 0;
-					background-color: map-get($colors, white);
-					line-height: 1;
-					padding: 4rem;
-					P {
-						text-align: left;
-						font-size: 3rem;
-						font-family: "Lato Black";
-						text-transform: uppercase;
-						margin: 0;
-					}
-				}
-				&.active {
-					.list-image {
-						&:before {
-							background: transparent map-get($images, red_background);
-						}
-					}
-					.list-desc {
-						background: transparent;
-						border: 1px solid map-get($colors, white);
-						padding: 2rem;
-						top: 0;
-						margin: 2rem;
-						color: map-get($colors, white);
-					}
-				}
 			}
 		}
 	}

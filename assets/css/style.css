@@ -4,9 +4,9 @@
   src: url("../fonts/Lato-Light.eot?#iefix") format("embedded-opentype"), url("../fonts/Lato-Light.woff") format("woff"), url("../fonts/Lato-Light.ttf") format("truetype");
 }
 @font-face {
-  font-family: 'Lato Regulare';
-  src: url("../fonts/Lato-Regulare.eot");
-  src: url("../fonts/Lato-Regulare.eot?#iefix") format("embedded-opentype"), url("../fonts/Lato-Regulare.woff") format("woff"), url("../fonts/Lato-Regulare.ttf") format("truetype");
+  font-family: 'Lato Regular';
+  src: url("../fonts/Lato-Regular.eot");
+  src: url("../fonts/Lato-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/Lato-Regular.woff") format("woff"), url("../fonts/Lato-Regular.ttf") format("truetype");
 }
 @font-face {
   font-family: 'Lato Bold';
@@ -38,7 +38,17 @@ img {
   max-width: 100%;
 }
 
-/* line 22, ../sass/style.scss */
+/* line 21, ../sass/style.scss */
+a {
+  text-decoration: none;
+}
+/* line 23, ../sass/style.scss */
+a:hover, a:focus, a:active {
+  text-decoration: none;
+  outline: none;
+}
+
+/* line 30, ../sass/style.scss */
 .pmu-wrapper > * {
   width: auto;
   max-width: 450px;
@@ -48,7 +58,7 @@ img {
 }
 
 @media (min-width: 768px) {
-  /* line 34, ../sass/style.scss */
+  /* line 42, ../sass/style.scss */
   .pmu-wrapper > * {
     width: 80%;
     max-width: 80.8rem;
@@ -57,7 +67,7 @@ img {
     margin: 0 auto;
   }
 }
-/* line 45, ../sass/style.scss */
+/* line 53, ../sass/style.scss */
 .title {
   font-size: 4rem;
   line-height: 1;
@@ -67,27 +77,29 @@ img {
   margin-bottom: 2rem;
 }
 
-/* line 53, ../sass/style.scss */
+/* line 61, ../sass/style.scss */
 .desc {
   font-size: 2.2rem;
   color: #757575;
   padding: 0 5rem;
+  max-width: 80rem;
+  margin: 0 auto;
 }
 
-/* line 59, ../sass/style.scss */
+/* line 69, ../sass/style.scss */
 .container-full {
   margin: 0 auto;
   width: 100%;
 }
 
-/* line 65, ../sass/style.scss */
+/* line 74, ../sass/style.scss */
 .banner-wrapper {
   min-height: 70rem;
   background: transparent url("../images/banner-background.png") no-repeat center;
   background-size: cover;
   margin-bottom: 15rem;
 }
-/* line 69, ../sass/style.scss */
+/* line 78, ../sass/style.scss */
 .banner-wrapper .banner-container {
   padding-top: 10rem;
   padding-bottom: 10rem;
@@ -95,15 +107,15 @@ img {
   color: #FFFFFF;
   line-height: 1.2;
 }
-/* line 75, ../sass/style.scss */
+/* line 84, ../sass/style.scss */
 .banner-wrapper .banner-container .banner-logo {
   padding: 1.5rem 0 12rem 0;
 }
-/* line 77, ../sass/style.scss */
+/* line 86, ../sass/style.scss */
 .banner-wrapper .banner-container .banner-logo img {
   width: 10.8rem;
 }
-/* line 81, ../sass/style.scss */
+/* line 90, ../sass/style.scss */
 .banner-wrapper .banner-container .banner-title {
   font-family: "Lato Black";
   font-size: 5.8rem;
@@ -112,11 +124,11 @@ img {
   padding: 1.1rem 3.1rem;
   color: inherit;
 }
-/* line 89, ../sass/style.scss */
+/* line 98, ../sass/style.scss */
 .banner-wrapper .banner-container .banner-desc {
   margin: 1px 0 0;
 }
-/* line 91, ../sass/style.scss */
+/* line 100, ../sass/style.scss */
 .banner-wrapper .banner-container .banner-desc P {
   font-size: 2.2rem;
   background-image: url("../images/header-background.png");
@@ -124,11 +136,11 @@ img {
   display: inline;
   line-height: inherit;
 }
-/* line 99, ../sass/style.scss */
+/* line 108, ../sass/style.scss */
 .banner-wrapper .banner-container .banner-link {
   margin-top: 13rem;
 }
-/* line 101, ../sass/style.scss */
+/* line 110, ../sass/style.scss */
 .banner-wrapper .banner-container .banner-link i {
   background-image: url("../images/arrow-down.png");
   width: 3.8rem;
@@ -137,20 +149,20 @@ img {
   background-size: contain;
 }
 
-/* line 113, ../sass/style.scss */
+/* line 122, ../sass/style.scss */
 .bachelours-degree {
   margin-bottom: 15rem;
   text-align: center;
 }
-/* line 119, ../sass/style.scss */
+/* line 128, ../sass/style.scss */
 .bachelours-degree .bachelours-degree-wrapper .desc {
   margin-bottom: 7rem;
 }
-/* line 122, ../sass/style.scss */
+/* line 131, ../sass/style.scss */
 .bachelours-degree .bachelours-degree-wrapper .degree-list {
   border-top: 1px solid #ECEFF1;
 }
-/* line 124, ../sass/style.scss */
+/* line 133, ../sass/style.scss */
 .bachelours-degree .bachelours-degree-wrapper .degree-list .degree-list-item {
   border-bottom: 1px solid #ECEFF1;
   padding: 1.8rem 2rem;
@@ -161,22 +173,24 @@ img {
   position: relative;
   text-align: left;
   color: #454545;
+  cursor: pointer;
 }
-/* line 134, ../sass/style.scss */
+/* line 144, ../sass/style.scss */
 .bachelours-degree .bachelours-degree-wrapper .degree-list .degree-list-item i {
+  position: relative;
   display: table-cell;
   font-style: normal;
   width: 2.1rem;
   height: 2.2rem;
   line-height: 1;
 }
-/* line 141, ../sass/style.scss */
+/* line 152, ../sass/style.scss */
 .bachelours-degree .bachelours-degree-wrapper .degree-list .degree-list-item p {
   display: table-cell;
   padding-left: 2.5rem;
   width: 65rem;
 }
-/* line 146, ../sass/style.scss */
+/* line 157, ../sass/style.scss */
 .bachelours-degree .bachelours-degree-wrapper .degree-list .degree-list-item button {
   display: table-cell;
   background: none;
@@ -189,37 +203,53 @@ img {
   padding: 1rem 2rem;
   border-radius: 2rem;
 }
-/* line 157, ../sass/style.scss */
+/* line 168, ../sass/style.scss */
 .bachelours-degree .bachelours-degree-wrapper .degree-list .degree-list-item button:focus, .bachelours-degree .bachelours-degree-wrapper .degree-list .degree-list-item button:active {
   outline: none;
 }
-/* line 162, ../sass/style.scss */
-.bachelours-degree .bachelours-degree-wrapper .degree-list .degree-list-item.active i {
+/* line 172, ../sass/style.scss */
+.bachelours-degree .bachelours-degree-wrapper .degree-list .degree-list-item.active, .bachelours-degree .bachelours-degree-wrapper .degree-list .degree-list-item:hover {
+  background: #FF3366;
+  color: #FFFFFF;
+}
+/* line 175, ../sass/style.scss */
+.bachelours-degree .bachelours-degree-wrapper .degree-list .degree-list-item.active button, .bachelours-degree .bachelours-degree-wrapper .degree-list .degree-list-item:hover button {
+  color: #FFFFFF;
+}
+/* line 180, ../sass/style.scss */
+.bachelours-degree .bachelours-degree-wrapper .degree-list .degree-list-item.checked i {
   text-indent: -99999999px;
   background: transparent url("../images/green-check.png") no-repeat center left;
   background-size: contain;
 }
-/* line 174, ../sass/style.scss */
-.bachelours-degree.masters-degree .bachelours-degree-wrapper .degree-list-item.active {
-  border-bottom: 0;
-  background: #FF3366;
-  color: #FFFFFF;
-}
-/* line 178, ../sass/style.scss */
-.bachelours-degree.masters-degree .bachelours-degree-wrapper .degree-list-item.active button {
-  color: #FFFFFF;
-}
-/* line 181, ../sass/style.scss */
-.bachelours-degree.masters-degree .bachelours-degree-wrapper .degree-list-item.active i {
-  position: relative;
+/* line 193, ../sass/style.scss */
+.bachelours-degree.masters-degree .bachelours-degree-wrapper .degree-list-item.checked i {
   background-image: url("../images/white-check.png");
 }
-/* line 184, ../sass/style.scss */
-.bachelours-degree.masters-degree .bachelours-degree-wrapper .degree-list-item.active i .popup-info {
+/* line 195, ../sass/style.scss */
+.bachelours-degree.masters-degree .bachelours-degree-wrapper .degree-list-item.checked i:before {
+  height: 0;
+  width: 0;
+  content: "";
+  border-width: .9rem;
+  border-style: solid;
+  border-color: transparent #FFFFFF transparent transparent;
+  position: absolute;
+  right: -2rem;
+  top: 50%;
+  z-index: 2;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+/* line 208, ../sass/style.scss */
+.bachelours-degree.masters-degree .bachelours-degree-wrapper .degree-list-item.checked i:after {
+  content: "Mark as Read";
   position: absolute;
   padding: 1rem;
-  left: calc(100% + 1rem);
-  top: 0;
+  left: 3.8rem;
   font-family: "Lato Bold";
   font-size: 1.2rem;
   background: white;
@@ -229,66 +259,51 @@ img {
   text-indent: 0;
   white-space: nowrap;
   border-radius: 3px;
-  top: 50%;
   -moz-box-shadow: 2px 2px 15px -6px #000000;
   -webkit-box-shadow: 2px 2px 15px -6px #000000;
   box-shadow: 2px 2px 15px -6px #000000;
-  -webkit-transform: translateY(-50%);
-  -moz-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  -o-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-/* line 201, ../sass/style.scss */
-.bachelours-degree.masters-degree .bachelours-degree-wrapper .degree-list-item.active i .popup-info:before {
-  height: 0;
-  width: 0;
-  content: "";
-  border-width: .9rem;
-  border-style: solid;
-  border-color: transparent #FFFFFF transparent transparent;
-  position: absolute;
-  left: -1.6rem;
   top: 50%;
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   transform: translateY(-50%);
+  z-index: 1;
 }
 
-/* line 221, ../sass/style.scss */
+/* line 234, ../sass/style.scss */
 .specialization {
   margin-bottom: 15rem;
   text-align: center;
   color: #454545;
 }
-/* line 225, ../sass/style.scss */
+/* line 238, ../sass/style.scss */
 .specialization .title {
   margin-bottom: 2rem;
 }
-/* line 228, ../sass/style.scss */
+/* line 241, ../sass/style.scss */
 .specialization .desc {
   padding: 0 5rem;
 }
-/* line 231, ../sass/style.scss */
+/* line 244, ../sass/style.scss */
 .specialization .specialization-list {
   display: inline-block;
   width: 100%;
 }
-/* line 234, ../sass/style.scss */
+/* line 247, ../sass/style.scss */
 .specialization .specialization-list .specialization-list-item {
   width: 50%;
   float: left;
   font-family: "Lato Black";
   font-size: 2.2rem;
   margin-top: 6rem;
+  cursor: pointer;
 }
-/* line 240, ../sass/style.scss */
+/* line 254, ../sass/style.scss */
 .specialization .specialization-list .specialization-list-item:nth-child(4n+1) {
   clear: left;
 }
-/* line 243, ../sass/style.scss */
+/* line 257, ../sass/style.scss */
 .specialization .specialization-list .specialization-list-item i {
   border-radius: 50%;
   background-color: #454545;
@@ -297,111 +312,179 @@ img {
   height: 7rem;
   margin: 0 auto 2rem;
 }
-/* line 251, ../sass/style.scss */
+/* line 265, ../sass/style.scss */
 .specialization .specialization-list .specialization-list-item span {
   display: block;
   text-transform: uppercase;
 }
-/* line 255, ../sass/style.scss */
-.specialization .specialization-list .specialization-list-item.active {
+/* line 269, ../sass/style.scss */
+.specialization .specialization-list .specialization-list-item.active, .specialization .specialization-list .specialization-list-item:hover {
   color: #FF3366;
 }
-/* line 257, ../sass/style.scss */
-.specialization .specialization-list .specialization-list-item.active i {
+/* line 271, ../sass/style.scss */
+.specialization .specialization-list .specialization-list-item.active i, .specialization .specialization-list .specialization-list-item:hover i {
   background-color: #FF3366;
 }
 
-/* line 265, ../sass/style.scss */
+/* line 279, ../sass/style.scss */
 .knowledge {
   background: #f2f2f2;
   padding: 15rem 0;
   text-align: center;
 }
-/* line 269, ../sass/style.scss */
+/* line 283, ../sass/style.scss */
 .knowledge > * {
   max-width: 94.4rem;
 }
-/* line 273, ../sass/style.scss */
+/* line 286, ../sass/style.scss */
+.knowledge .knowledge-list {
+  display: inline-block;
+  margin-left: -2.1rem;
+}
+/* line 289, ../sass/style.scss */
 .knowledge .knowledge-list .knowledge-list-item {
   margin-top: 6rem;
+  padding-left: 2.1rem;
   width: 100%;
+  float: left;
+  position: relative;
+  cursor: pointer;
+}
+/* line 296, ../sass/style.scss */
+.knowledge .knowledge-list .knowledge-list-item .list-image {
+  position: relative;
+}
+/* line 298, ../sass/style.scss */
+.knowledge .knowledge-list .knowledge-list-item .list-image:before {
+  content: "";
+  background: transparent url("../images/header-background.png");
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+/* line 308, ../sass/style.scss */
+.knowledge .knowledge-list .knowledge-list-item .list-desc {
+  position: absolute;
+  bottom: 0;
+  background-color: #FFFFFF;
+  line-height: 1;
+  padding: 4rem;
+  width: calc(100% - 2.1rem);
+}
+/* line 315, ../sass/style.scss */
+.knowledge .knowledge-list .knowledge-list-item .list-desc P {
+  text-align: left;
+  font-size: 3rem;
+  font-family: "Lato Black";
+  text-transform: uppercase;
+  margin: 0;
+}
+/* line 325, ../sass/style.scss */
+.knowledge .knowledge-list .knowledge-list-item.active .list-image:before, .knowledge .knowledge-list .knowledge-list-item:hover .list-image:before {
+  background: transparent url("../images/red-background.png");
+}
+/* line 329, ../sass/style.scss */
+.knowledge .knowledge-list .knowledge-list-item.active .list-desc, .knowledge .knowledge-list .knowledge-list-item:hover .list-desc {
+  background: transparent;
+  border: 1px solid #FFFFFF;
+  padding: 0;
+  top: 0;
+  margin: 2rem;
+  color: #FFFFFF;
+  width: calc(100% - 6.1rem);
+}
+/* line 337, ../sass/style.scss */
+.knowledge .knowledge-list .knowledge-list-item.active .list-desc p, .knowledge .knowledge-list .knowledge-list-item:hover .list-desc p {
+  position: absolute;
+  bottom: 0;
+  padding: 2rem;
+}
+
+/* line 348, ../sass/style.scss */
+.placements {
+  padding: 15rem 0;
+}
+/* line 350, ../sass/style.scss */
+.placements .placements-wrapper {
+  text-align: center;
+}
+/* line 353, ../sass/style.scss */
+.placements .placements-wrapper .placements-list .placements-list-item {
+  display: table;
+  text-align: left;
+  margin-top: 6rem;
+}
+/* line 357, ../sass/style.scss */
+.placements .placements-wrapper .placements-list .placements-list-item > * {
+  display: table-cell;
+  vertical-align: middle;
+}
+/* line 361, ../sass/style.scss */
+.placements .placements-wrapper .placements-list .placements-list-item .list-image {
+  width: 15.1rem;
+}
+/* line 364, ../sass/style.scss */
+.placements .placements-wrapper .placements-list .placements-list-item .list-content {
+  padding-left: 4rem;
+}
+/* line 366, ../sass/style.scss */
+.placements .placements-wrapper .placements-list .placements-list-item .list-content .list-header {
+  font-size: 2.2rem;
+}
+/* line 369, ../sass/style.scss */
+.placements .placements-wrapper .placements-list .placements-list-item .list-content .list-desc {
+  font-size: 1.6rem;
+  padding: 0;
+  font-family: "Lato Regular";
+}
+/* line 374, ../sass/style.scss */
+.placements .placements-wrapper .placements-list .placements-list-item .list-content .list-link {
+  color: #FF3366;
+}
+/* line 376, ../sass/style.scss */
+.placements .placements-wrapper .placements-list .placements-list-item .list-content .list-link a {
+  font-family: "Lato Black";
+  font-size: 1.4rem;
+  color: inherit;
+  text-transform: uppercase;
+}
+/* line 381, ../sass/style.scss */
+.placements .placements-wrapper .placements-list .placements-list-item .list-content .list-link a:after {
+  font-size: 2rem;
+  color: inherit;
+  content: "\00bb";
 }
 
 @media (min-width: 768px) {
-  /* line 282, ../sass/style.scss */
+  /* line 396, ../sass/style.scss */
   html, body {
     font-size: 6px;
   }
 
-  /* line 288, ../sass/style.scss */
+  /* line 402, ../sass/style.scss */
   .specialization .specialization-list .specialization-list-item {
     width: 25%;
   }
 
-  /* line 295, ../sass/style.scss */
+  /* line 409, ../sass/style.scss */
   .knowledge .knowledge-list {
     display: inline-block;
-    margin-left: -2.1rem;
   }
-  /* line 298, ../sass/style.scss */
+  /* line 411, ../sass/style.scss */
   .knowledge .knowledge-list .knowledge-list-item {
-    padding-left: 2.1rem;
     width: 33.33%;
-    float: left;
-    position: relative;
-  }
-  /* line 303, ../sass/style.scss */
-  .knowledge .knowledge-list .knowledge-list-item .list-image {
-    position: relative;
-  }
-  /* line 305, ../sass/style.scss */
-  .knowledge .knowledge-list .knowledge-list-item .list-image:before {
-    content: "";
-    background: transparent url("../images/header-background.png");
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
-  /* line 315, ../sass/style.scss */
-  .knowledge .knowledge-list .knowledge-list-item .list-desc {
-    position: absolute;
-    bottom: 0;
-    background-color: #FFFFFF;
-    line-height: 1;
-    padding: 4rem;
-  }
-  /* line 321, ../sass/style.scss */
-  .knowledge .knowledge-list .knowledge-list-item .list-desc P {
-    text-align: left;
-    font-size: 3rem;
-    font-family: "Lato Black";
-    text-transform: uppercase;
-    margin: 0;
-  }
-  /* line 331, ../sass/style.scss */
-  .knowledge .knowledge-list .knowledge-list-item.active .list-image:before {
-    background: transparent url("../images/red-background.png");
-  }
-  /* line 335, ../sass/style.scss */
-  .knowledge .knowledge-list .knowledge-list-item.active .list-desc {
-    background: transparent;
-    border: 1px solid #FFFFFF;
-    padding: 2rem;
-    top: 0;
-    margin: 2rem;
-    color: #FFFFFF;
   }
 }
 @media (min-width: 992px) {
-  /* line 352, ../sass/style.scss */
+  /* line 421, ../sass/style.scss */
   html, body {
     font-size: 8px;
   }
 }
 @media (min-width: 1200px) {
-  /* line 360, ../sass/style.scss */
+  /* line 429, ../sass/style.scss */
   html, body {
     font-size: 10px;
   }
