@@ -475,6 +475,9 @@ a {
 					}
 					.social-list {
 						margin-left: -1rem;
+						.social-list-item {
+							margin-left: 1rem;
+						}
 					}
 				}
 				&.active, &:hover {
