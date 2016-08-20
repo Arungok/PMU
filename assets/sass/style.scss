@@ -1,21 +1,59 @@
 @import "fonts.scss";
 @import "mixin.scss";
 
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
 html, body {
 	width: 100%;
 	background-color: map-get($colors, white);
 	font-size: 5px;
 	margin: 0;
 	font-family: "Lato Light";
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%
+}
+
+article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary {
+	display: block
+}
+
+p {
+	margin: 0;
+	margin-bottom: 1rem;
+}
+
+h2,h3,p {
+	orphans: 3;
+	widows: 3
+}
+
+h2,h3 {
+	page-break-after: avoid
+}
+
+.navbar {
+	display: none
 }
 
 ul, li {
 	list-style: none;
 	padding: 0;
+	margin: 0;
 }
 
 img {
 	max-width: 100%;
+	vertical-align: middle;
+}
+
+input, button {
+	&:focus, &:active {
+		outline: none;
+	}
 }
 
 a {
@@ -56,7 +94,7 @@ a {
 	font-family: "Lato Black";
 	color: map-get($colors, darkgray);
 	text-transform: uppercase;
-	margin-bottom: 2rem;
+	margin-bottom: 3rem;
 }
 .desc {
 	font-size: 2.2rem;
@@ -153,6 +191,10 @@ a {
 					display: table-cell;
 					padding-left: 2.5rem;
 					width: 65rem;
+					a {
+						display: block;
+						color: inherit;
+					}
 				}
 				button {
 					display: table-cell;
@@ -304,14 +346,18 @@ a {
 					right: 0;
 					bottom: 0;
 				}
+				img {
+					width: 100%;
+				}
 			}
 			.list-desc {
 				position: absolute;
 				bottom: 0;
+				right: 0;
+				left: 2.1rem;
 				background-color: map-get($colors, white);
 				line-height: 1;
 				padding: 4rem;
-				width: calc(100% - 2.1rem);
 				P {
 					text-align: left;
 					font-size: 3rem;
@@ -333,8 +379,7 @@ a {
 					top: 0;
 					margin: 2rem;
 					color: map-get($colors, white);
-					width: calc(100% - 6.1rem);
-					p {
+					.list-desc-details {
 						position: absolute;
 						bottom: 0;
 						padding: 2rem;
@@ -388,6 +433,170 @@ a {
 				}
 			}
 		}
+	}
+}
+
+.our-team {
+	padding: 15rem 0;
+	background: map-get($colors, lightgray);
+	.our-team-wrapper {
+		text-align: center;
+		background: inherit;
+		color: map-get($colors, darkgray);
+		.our-team-list {
+			margin-top: 4.4rem;
+			margin-left: -3rem;
+			display: inline-block;
+			.our-team-list-item {
+				float: left;
+				padding-left: 3rem;
+				max-width: 36rem;
+				display: inline-block;
+				position: relative;
+				.list-image {
+					position: relative;
+				}
+				.list-desc {
+					position: absolute;
+					left: 3rem;
+					bottom: 0;
+					right: 0;
+					background-color: map-get($colors, white);
+					padding: 4rem 4rem 6rem;
+					text-align: left;
+					.list-title {
+						font-size: 2.2rem;
+						font-family: "Lato Black";
+						color: map-get($colors, darkgray);
+						text-transform: uppercase;
+					}
+					.list-designation {
+						font-size: 1.6rem;
+					}
+					.social-list {
+						margin-left: -1rem;
+					}
+				}
+				&.active, &:hover {
+					.list-image:before {
+						content: '';
+						width: 100%;
+						height: 100%;
+						top: 0;
+						left: 0;
+						position: absolute;
+						background: transparent map-get($images, red_background);
+					}
+					.list-desc {
+						top: 0;
+						right: 0;
+						width: auto;
+						background-color: transparent;
+						border: 1px solid map-get($colors, white);
+						margin: 2rem;
+						padding: 2rem 2rem 4rem;
+						.list-desc-details {
+							bottom: 4rem;
+							position: absolute;
+							.list-title {
+								color: map-get($colors, white);
+							}
+							.list-designation {
+								color: map-get($colors, white);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.social-list {
+	.social-list-item {
+		height: 5.2rem;
+		width: 5.2rem;
+		min-width: 40px;
+		min-height: 40px;    
+		display: inline-block;
+		border-radius: 50%;
+		border: 1px solid map-get($colors, borderGray);
+		&.facebook {
+			background: map-get($colors, white) map-get($images, facebook) center no-repeat;
+		}&.twitter {
+			background: map-get($colors, white) map-get($images, twitter) center no-repeat;
+		}&.linkedin {
+			background: map-get($colors, white) map-get($images, linkedin) center no-repeat;
+		}&.gmail {
+			background: map-get($colors, white) map-get($images, gmail) center no-repeat;
+		}
+	}
+}
+
+.keep-in-touch {
+	padding: 10rem 0;
+	background-color: map-get($colors, mediumblack);
+	text-align: center;
+	.title {
+		color: map-get($colors, white);
+		margin: 0;
+	}
+	.desc {
+		color: map-get($colors, white);
+	}
+	.contact-us {
+		display: inline-block;
+		margin-top: 6rem;
+		.contact-us-form {
+			width: 40rem;
+			float: left;
+			height: 5rem;
+			min-height: 40px;
+			position: relative;
+			margin-top: 2.5px;
+			.email-input {
+				width: inherit;
+				height: inherit;
+				border-radius: 2.5rem;
+				border: none;
+				padding: 1rem 13rem 1rem 2.5rem;
+				font-family: "Lato Regular";
+				font-size: 1.6rem;
+			}
+			.submit-button {
+				position: absolute;
+				width: 12rem;
+				min-width: 80px;
+				top: 5px;
+				right: 5px;
+				bottom: 5px;
+				border-radius: 2rem;
+				border: none;
+				background-color: map-get($colors, buttonRed);
+				color: map-get($colors, white);
+				font-family: "Lato Black";
+				font-size: 1.4rem;
+				text-transform: uppercase;
+			}
+		}
+		.social-list {
+			float: left;
+			text-align: left;
+			.social-list-item {
+				margin-left: 2rem;
+			}
+		}
+	}
+}
+
+.copyrights {
+	background-color: map-get($colors, nearlyblack);
+	.copyrights-text {
+		padding: 1.6rem 0;
+		margin: 0;
+		text-align: center;
+		color: map-get($colors, white);
+		font-size: 1.8rem;
 	}
 }
 

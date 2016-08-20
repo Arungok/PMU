@@ -1,6 +1,6 @@
-$colors: (white: #FFFFFF, black: #000000, gray: #A2A2A2, borderGray: #ECEFF1, buttonRed: #FF3366, darkgray: #454545, mediumgray: #757575, lightgray: #f2f2f2);
+$colors: (white: #FFFFFF, black: #000000, gray: #A2A2A2, borderGray: #ECEFF1, buttonRed: #FF3366, darkgray: #454545, mediumgray: #757575, lightgray: #f2f2f2, mediumblack: #333333, nearlyblack: #212121);
 
-$images: (banner_background: url("../images/banner-background.png"), black_background_transparent: url("../images/header-background.png"), arrow_down: url('../images/arrow-down.png'), green_check: url('../images/green-check.png'), red_background: url("../images/red-background.png"));
+$images: (banner_background: url("../images/banner-background.png"), black_background_transparent: url("../images/header-background.png"), arrow_down: url('../images/arrow-down.png'), green_check: url('../images/green-check.png'), red_background: url("../images/red-background.png"), facebook: url("../images/facebook.png"), twitter: url("../images/twitter.png"), linkedin: url("../images/linkedin.png"), gmail: url("../images/gmail.png"));
 
 @mixin _transform($value) {
 	-webkit-transform: $value;
